@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstateIQ — Bangalore Property Valuation Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        /* Premium custom chevron vector for drop-down selection menus */
+        .custom-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.25rem;
+            padding-right: 2.5rem;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-[#1e293b] min-h-screen antialiased selection:bg-blue-500/10">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 backdrop-blur-md bg-white/80">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 bg-blue-600 text-white font-bold rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 text-lg">
+                    🏢
+                </div>
+                <div>
+                    <h1 class="text-lg font-extrabold tracking-tight text-slate-900">EstateIQ</h1>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">Bangalore Valuation Corridor</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200/60">Core ML Engine v2.4</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-10">
+        
+        <div id="formViewport" class="space-y-8 transition-all duration-300">
+            <div>
+                <h2 class="text-2xl font-extrabold tracking-tight text-slate-950">Bangalore Property Valuation</h2>
+                <p class="text-sm text-slate-500 mt-1.5">Provide detailed location infrastructural parameters to compute an AI-backed asset appraisal.</p>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center shadow-md shadow-blue-500/10">1</span>
+                    <h3 class="font-bold text-slate-900 text-base">Property Specifications</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Locality / Area</label>
+                        <select id="location" class="custom-select w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition-all">
+                            <option value="Anjanapura">Anjanapura</option>
+                            <option value="BTM Layout">BTM Layout</option>
+                            <option value="Banaswadi">Banaswadi</option>
+                            <option value="Bannerghatta Road">Bannerghatta Road</option>
+                            <option value="Basavanagudi">Basavanagudi</option>
+                            <option value="Begur">Begur</option>
+                            <option value="Bellandur">Bellandur</option>
+                            <option value="Bommasandra">Bommasandra</option>
+                            <option value="Brookefield">Brookefield</option>
+                            <option value="CV Raman Nagar">CV Raman Nagar</option>
+                            <option value="Chandapura">Chandapura</option>
+                            <option value="Devanahalli">Devanahalli</option>
+                            <option value="Domlur">Domlur</option>
+                            <option value="Electronic City">Electronic City</option>
+                            <option value="Electronic City Phase 1">Electronic City Phase 1</option>
+                            <option value="Electronic City Phase 2">Electronic City Phase 2</option>
+                            <option value="Frazer Town">Frazer Town</option>
+                            <option value="HSR Layout">HSR Layout</option>
+                            <option value="Hebbal">Hebbal</option>
+                            <option value="Hennur Road">Hennur Road</option>
+                            <option value="Hoodi">Hoodi</option>
+                            <option value="Hosur Road">Hosur Road</option>
+                            <option value="Indiranagar" selected>Indiranagar</option>
+                            <option value="JP Nagar">JP Nagar</option>
+                            <option value="Jakkar">Jakkar</option>
+                            <option value="Jayanagar">Jayanagar</option>
+                            <option value="KR Puram">KR Puram</option>
+                            <option value="Kadugodi">Kadugodi</option>
+                            <option value="Kanakapura Road">Kanakapura Road</option>
+                            <option value="Kengeri">Kengeri</option>
+                            <option value="Koramangala">Koramangala</option>
+                            <option value="Magadi Road">Magadi Road</option>
+                            <option value="Mahadevapura">Mahadevapura</option>
+                            <option value="Malleswaram">Malleswaram</option>
+                            <option value="Marathahalli">Marathahalli</option>
+                            <option value="Nagarbhavi">Nagarbhavi</option>
+                            <option value="Old Airport Road">Old Airport Road</option>
+                            <option value="Outer Ring Road">Outer Ring Road</option>
+                            <option value="Padmanabhanagar">Padmanabhanagar</option>
+                            <option value="Panathur">Panathur</option>
+                            <option value="RT Nagar">RT Nagar</option>
+                            <option value="Rajajinagar">Rajajinagar</option>
+                            <option value="Rayan Circle">Rayan Circle</option>
+                            <option value="Sadashivanagar">Sadashivanagar</option>
+                            <option value="Sahakara Nagar">Sahakara Nagar</option>
+                            <option value="Sarjapur Road">Sarjapur Road</option>
+                            <option value="Thanisandra">Thanisandra</option>
+                            <option value="Tumkur Road">Tumkur Road</option>
+                            <option value="Uttarahalli">Uttarahalli</option>
+                            <option value="Varthur">Varthur</option>
+                            <option value="Whitefield">Whitefield</option>
+                            <option value="Yeshwanthpur">Yeshwanthpur</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Property Type</label>
+                        <select id="property_type" class="custom-select w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition-all">
+                            <option value="Apartment">Apartment</option>
+                            <option value="Independent House">Independent House</option>
+                            <option value="Villa" selected>Villa</option>
+                            <option value="Penthouse">Penthouse</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Built-Up Area (Sq Ft)</label>
+                        <input type="number" id="area" value="1250" class="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Rooms (BHK)</label>
+                        <select id="rooms" class="custom-select w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition-all">
+                            <option value="1">1 BHK</option>
+                            <option value="2">2 BHK</option>
+                            <option value="3" selected>3 BHK</option>
+                            <option value="4">4 BHK</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Bathrooms</label>
+                        <select id="bathrooms" class="custom-select w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition-all">
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Age of Property (Yrs)</label>
+                        <input type="number" id="age_of_property" value="2" class="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition-all">
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Furnishing Status</label>
+                        <select id="furnishing_status" class="custom-select w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition-all">
+                            <option value="Unfurnished">Unfurnished</option>
+                            <option value="Semi-Furnished" selected>Semi-Furnished</option>
+                            <option value="Fully-Furnished">Fully-Furnished</option>
+                        </select>
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Parking Spaces</label>
+                        <select id="parking_spaces" class="custom-select w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 outline-none focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition-all">
+                            <option value="0">None</option>
+                            <option value="1" selected>1 Space</option>
+                            <option value="2">2 Spaces</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center shadow-md shadow-blue-500/10">2</span>
+                    <h3 class="font-bold text-slate-900 text-base">Location Infrastructure</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button type="button" onclick="toggleAmenity(this, 'near_metro')" class="px-4 py-3 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-600 transition-all hover:border-slate-300 hover:bg-slate-50 cursor-pointer">🚇 Near Metro Station</button>
+                    <button type="button" onclick="toggleAmenity(this, 'gated')" class="px-4 py-3 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-600 transition-all hover:border-slate-300 hover:bg-slate-50 cursor-pointer">🔒 Gated Community</button>
+                    <button type="button" onclick="toggleAmenity(this, 'near_school')" class="px-4 py-3 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-600 transition-all hover:border-slate-300 hover:bg-slate-50 cursor-pointer">🏫 Near School/Hospital</button>
+                    <button type="button" onclick="toggleAmenity(this, 'near_it_park')" class="px-4 py-3 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-600 transition-all hover:border-slate-300 hover:bg-slate-50 cursor-pointer">💻 Near IT Park/Tech Hub</button>
+                </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center shadow-md shadow-blue-500/10">3</span>
+                    <h3 class="font-bold text-slate-900 text-base">Structural Value Perks</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button type="button" onclick="toggleAmenity(this, 'pool')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">🏊 Swimming Pool</button>
+                    <button type="button" onclick="toggleAmenity(this, 'gym')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">🏋️ Gym / Fitness Center</button>
+                    <button type="button" onclick="toggleAmenity(this, 'security')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">🛡️ 24/7 Security</button>
+                    <button type="button" onclick="toggleAmenity(this, 'garden')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">🌿 Garden / Landscaping</button>
+                    <button type="button" onclick="toggleAmenity(this, 'clubhouse')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">🏛️ Clubhouse</button>
+                    <button type="button" onclick="toggleAmenity(this, 'play_area')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">🛝 Children's Play Area</button>
+                    <button type="button" onclick="toggleAmenity(this, 'backup')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">⚡ Power Backup</button>
+                    <button type="button" onclick="toggleAmenity(this, 'rainwater')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">💧 Rainwater Harvesting</button>
+                    <button type="button" onclick="toggleAmenity(this, 'ev_charging')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">🔌 EV Charging Point</button>
+                    <button type="button" onclick="toggleAmenity(this, 'cctv')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">📷 CCTV Surveillance</button>
+                    <button type="button" onclick="toggleAmenity(this, 'intercom')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">📞 Intercom System</button>
+                    <button type="button" onclick="toggleAmenity(this, 'rooftop')" class="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600 transition-all cursor-pointer">🏙️ Rooftop Terrace</button>
+                </div>
+
+                <div class="pt-6">
+                    <button type="button" id="submitBtn" onclick="requestEngineValuation()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-blue-500/20 transition-all text-sm uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+                        📊 Generate Price Prediction
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultViewport" class="hidden space-y-6 transition-all duration-300">
+            <button type="button" onclick="resetFormView()" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-xl transition-all border border-blue-200/40 cursor-pointer">
+                ← Run Another Estimation
+            </button>
+
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm relative overflow-hidden">
+                <div class="absolute right-0 top-0 translate-x-10 -translate-y-10 w-44 h-44 bg-blue-500/5 rounded-full blur-2xl"></div>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs uppercase font-extrabold tracking-widest text-slate-400">Valuation Verdict</span>
+                        <span class="text-[10px] font-bold uppercase bg-blue-50 text-blue-600 px-2.5 py-1 rounded-md border border-blue-200/50">Bangalore Real Estate Corridor 2026</span>
+                    </div>
+
+                    <div>
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Estimated Fair Market Value</span>
+                        <div id="price_display" class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-1">₹0</div>
+                    </div>
+
+                    <p class="text-xs font-semibold text-slate-500">
+                        Predictive Range Vector: <span id="range_display" class="font-bold text-blue-600">₹0 – ₹0</span>
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-slate-100">
+                        <div class="bg-slate-50 border border-slate-200/60 rounded-2xl p-4">
+                            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Appraised Rate / Sq Ft</span>
+                            <span id="sqft_display" class="text-lg font-extrabold text-slate-800 block mt-0.5">₹0</span>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200/60 rounded-2xl p-4">
+                            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Calculated Monthly Rent</span>
+                            <span id="rent_display" class="text-lg font-extrabold text-slate-800 block mt-0.5">₹0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Model Confidence Factor</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Inference layer pattern accuracy mapping</p>
+                        </div>
+                        <span class="text-xl font-black text-slate-800"><span id="conf_val">0</span>%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="conf_bar" class="bg-blue-600 h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900">Investment Index Score</h4>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Estimated compounding yield risk velocity</p>
+                        </div>
+                        <span class="text-xl font-black text-slate-800"><span id="invest_val">0</span>%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="invest_bar" class="bg-emerald-500 h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const selectedAmenities = {};
+
+        function toggleAmenity(element, key) {
+            selectedAmenities[key] = selectedAmenities[key] === 1 ? 0 : 1;
+            if (selectedAmenities[key] === 1) {
+                element.classList.remove('border-slate-200', 'bg-white', 'text-slate-600');
+                element.classList.add('border-blue-600/30', 'bg-blue-50', 'text-blue-600', 'font-bold', 'ring-2', 'ring-blue-600/10');
+            } else {
+                element.classList.add('border-slate-200', 'bg-white', 'text-slate-600');
+                element.classList.remove('border-blue-600/30', 'bg-blue-50', 'text-blue-600', 'font-bold', 'ring-2', 'ring-blue-600/10');
+            }
+        }
+
+        async function requestEngineValuation() {
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerText = "Processing Inference...";
+            btn.className = "w-full bg-slate-800 text-white font-bold py-4 px-6 rounded-xl transition-all text-sm uppercase tracking-wider flex items-center justify-center gap-2 cursor-not-allowed animate-pulse";
+
+            const payload = {
+                location: document.getElementById('location').value,
+                property_type: document.getElementById('property_type').value,
+                area: parseFloat(document.getElementById('area').value || 0),
+                rooms: parseInt(document.getElementById('rooms').value),
+                bathrooms: parseInt(document.getElementById('bathrooms').value),
+                age_of_property: parseInt(document.getElementById('age_of_property').value || 0),
+                furnishing_status: document.getElementById('furnishing_status').value,
+                parking_spaces: parseInt(document.getElementById('parking_spaces').value),
+                floor_number: 0,
+                total_floors: 1,
+                ...selectedAmenities
+            };
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    document.getElementById('formViewport').classList.add('hidden');
+                    const resView = document.getElementById('resultViewport');
+                    resView.classList.remove('hidden');
+
+                    document.getElementById('price_display').innerText = result.predicted_price;
+                    document.getElementById('range_display').innerText = result.valuation_range;
+                    document.getElementById('sqft_display').innerText = `${result.price_per_sqft} / sq ft`;
+                    document.getElementById('rent_display').innerText = `${result.monthly_rent} / mo`;
+                    
+                    document.getElementById('conf_val').innerText = result.confidence_score;
+                    document.getElementById('conf_bar').style.width = `${result.confidence_score}%`;
+                    
+                    document.getElementById('invest_val').innerText = result.investment_score;
+                    document.getElementById('invest_bar').style.width = `${result.investment_score}%`;
+                    
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert("Model Inference Failed: " + result.error);
+                    resetButtonState();
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Network communication error connecting to backend model.");
+                resetButtonState();
+            }
+        }
+
+        function resetButtonState() {
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = false;
+            btn.innerText = "Generate Price Prediction";
+            btn.className = "w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-blue-500/20 transition-all text-sm uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer";
+        }
+
+        function resetFormView() {
+            document.getElementById('resultViewport').classList.add('hidden');
+            document.getElementById('formViewport').classList.remove('hidden');
+            resetButtonState();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
