@@ -30,6 +30,7 @@
 
 ## 📊 Analytical Engine Blueprint
 
+```
 The processing engine maps and runs multi-variable inputs through distinct analytical sequences:
 
 [User Form Input] 
@@ -51,7 +52,7 @@ The processing engine maps and runs multi-variable inputs through distinct analy
        │
        ▼
 [UI View Transformation] (Renders dashboard graphs and value cards)
-
+```
 ---
 
 ## 📋 Core Analytical Equations
