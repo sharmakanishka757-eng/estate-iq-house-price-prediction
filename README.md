@@ -75,7 +75,7 @@ $$\text{Confidence Score \%} = \left( \frac{\text{Local Match Pool Overlap Varia
 ---
 
 ## 📂 Project Structure Directory Map
-
+```
 estate-iq/
 │
 ├── app.py                  # Primary application execution script & API endpoints
@@ -92,7 +92,7 @@ estate-iq/
     │   └── style.css       # Core layout typography patterns and styling parameters
     └── js/
         └── main.js         # Event loop monitoring, client validation scripts, async API calls
-
+```
 ---
 
 ## ⚡ Setup and Local Installation
@@ -103,37 +103,39 @@ Follow these steps to run the environment locally for evaluation or development:
 ```bash
 git clone [https://github.com/your-username/estate-iq.git](https://github.com/your-username/estate-iq.git)
 cd estate-iq
-
+```
 ---
 
 ### 2. Configure an Isolated Python Virtual Environment
-```bash
+
 # Windows
+```bash
 python -m venv venv
 venv\Scripts\activate
-
+```
 # macOS / Linux
+```
 python3 -m venv venv
 source venv/bin/activate
-
+```
 ---
 
 ### 3. Deploy Mandatory Project Dependencies
 ```bash
 pip install -r requirements.txt
-
+```
 ---
 
 ### 3. Deploy Mandatory Project Dependencies
 ```bash
 pip install -r requirements.txt
-
+```
 ---
 
 ### 4. Execute the Application Instance
 ```bash
 python app.py
-
+```
 Once launched, navigate your web browser address bar directly to: `http://127.0.0.1:5000/`
 
 ---
