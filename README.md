@@ -17,7 +17,7 @@
 
 ## 🛠️ Technical Stack & Framework Dependencie
 
-```text
+
 | Structural Layer | Technologies Applied | System Role |
 | :--- | :--- | :--- |
 | **Frontend UI Layout** | HTML5, CSS3 (Custom Variables, Flexbox/Grid) | Renders clean, modern, white SaaS interface frameworks. |
@@ -25,7 +25,7 @@
 | **Server Engine (API)** | Python 3.x, Flask / FastAPI Frameworks | Services incoming JSON requests, formats analytical response arrays. |
 | **Machine Learning Core** | Scikit-learn, Pandas, NumPy, Joblib | Controls high-performance data pipelining, training routines, and mathematical inferences. |
 | **Model Serialization** | Binary Pickle (`.pkl`) Serialization Storage | Persists structural weights and coefficients for lightning-fast disk execution. |
-```
+
 ---
 
 ## 📊 Analytical Engine Blueprint
